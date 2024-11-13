@@ -681,8 +681,16 @@ def display_plant1():
         """, unsafe_allow_html=True)
 
     
-    # Display anomalies dataframe
-    st.subheader("List of Anomalies")
+    # Display anomalies 
+    st.plotly_chart(plot_scatter_ac_vs_irradiation(test_data, selected_inverter),
+                   use_container_width=True)
+    
+    st.markdown("""
+        **Insights:** Sunlight intensity (irradiation) shows a **strong positive correlation** with AC power. 
+        This indicates that more sunlight received by the solar panel results in greater electricity generation.
+    """)
+
+    st.markdown("### List of Anomalies")
     if selected_inverter == "None":
         anomalies_df = test_data[test_data['predicted_anomaly'] == 1]
     else:
@@ -694,13 +702,7 @@ def display_plant1():
     st.plotly_chart(plot_anomalies_bar_chart(anomalies_by_inverter, selected_inverter),
                    use_container_width=True)
     
-    st.plotly_chart(plot_scatter_ac_vs_irradiation(test_data, selected_inverter),
-                   use_container_width=True)
     
-    st.markdown("""
-        **Insights:** Sunlight intensity (irradiation) shows a **strong positive correlation** with AC power. 
-        This indicates that more sunlight received by the solar panel results in greater electricity generation.
-    """)
     
     if selected_inverter != "None":
         st.plotly_chart(plot_irradiation_and_ac_power(df_solar1, selected_inverter,test_data),
@@ -743,7 +745,15 @@ def display_plant2():
 
     
     # Display anomalies dataframe
-    st.subheader("List of Anomalies")
+    st.plotly_chart(plot_scatter_ac_vs_irradiation(test_data, selected_inverter),
+                   use_container_width=True)
+    
+    st.markdown("""
+        **Insights:** Sunlight intensity (irradiation) shows a **strong positive correlation** with AC power. 
+        This indicates that more sunlight received by the solar panel results in greater electricity generation.
+    """)
+
+    st.markdown("### List of Anomalies")
     if selected_inverter == "None":
         anomalies_df = test_data[test_data['predicted_anomaly'] == 1]
     else:
@@ -755,13 +765,7 @@ def display_plant2():
     st.plotly_chart(plot_anomalies_bar_chart(anomalies_by_inverter, selected_inverter),
                    use_container_width=True)
     
-    st.plotly_chart(plot_scatter_ac_vs_irradiation(test_data, selected_inverter),
-                   use_container_width=True)
     
-    st.markdown("""
-        **Insights:** Sunlight intensity (irradiation) shows a **strong positive correlation** with AC power. 
-        This indicates that more sunlight received by the solar panel results in greater electricity generation.
-    """)
     
     if selected_inverter != "None":
         st.plotly_chart(plot_irradiation_and_ac_power(df_solar2, selected_inverter,test_data),
