@@ -522,7 +522,21 @@ def display_overview():
         )
         st.markdown("""
             _(Source: [Climates to Travel](https://www.climatestotravel.com/climate/india))_
+                    
+            **Rainfall patterns vary greatly across regions:**
+            - The **south-west coast** (e.g., Mumbai, Goa, Mangalore) receives over **2,000 mm** (80 in) annually.
+            - The **north-east region** (e.g., Kolkata and areas near Bangladesh) sees more than **1,500 mm** (60 in) of rain per year.
+            - At the **Himalayan foothills**, some areas are among the rainiest in the world.
+            - Conversely, **northwestern India** is quite arid, with western Rajasthan receiving less than **300 mm** (12 in) of rain annually.
+            - **Central and southern inland areas** (e.g., Hyderabad, Bangalore) typically receive between **800-1,000 mm** (32-40 in) annually.
+
+            The **hottest period** generally occurs **April to mid-June**, just before the monsoon, with temperatures often reaching **45 °C (113 °F)** in inland regions. **Summer in India** (May to August) is marked by **high temperatures**, typically between **37.8°C (100°F)** and **46.1°C (115°F)**. 
+                    
+            Interior regions like **Rajasthan** experience extreme heat, with record highs, such as **51°C (123.8°F)** recorded in Phalodi, Rajasthan, in May 2019. The southwest monsoon arriving in June brings relief, with coastal areas benefiting from cooling sea breezes, although **desert areas** remain dry with less than **254 mm** (10 in) of rain annually.
+
+            _(Source: [Weather Atlas](https://www.weather-atlas.com/en/india-climate))_
         """)
+        
         st.markdown("</div>", unsafe_allow_html=True)
    
     iforest_container = st.container()
