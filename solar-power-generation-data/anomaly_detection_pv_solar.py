@@ -278,6 +278,10 @@ def plot_scatter_ac_vs_irradiation(df, selected_inverter):
                     size=5,
                     opacity=get_opacity(inverter)
                 ),
+                # Update hover template to include inverter information
+                hovertemplate="<b>Inverter:</b> " + inverter + "<br>" +
+                              "<b>Irradiation:</b> %{x}<br>" +
+                              "<b>AC Power:</b> %{y}<extra></extra>",
                 # Show in legend only for first inverter or selected inverter
                 showlegend=(inverter == df['INVERTER'].unique()[0] if selected_inverter == "None" 
                           else inverter == selected_inverter)
@@ -298,6 +302,10 @@ def plot_scatter_ac_vs_irradiation(df, selected_inverter):
                     size=7,
                     opacity=get_opacity(inverter)
                 ),
+                # Update hover template to include inverter information
+                hovertemplate="<b>Inverter:</b> " + inverter + "<br>" +
+                              "<b>Irradiation:</b> %{x}<br>" +
+                              "<b>AC Power:</b> %{y}<extra></extra>",
                 # Show in legend only for first inverter or selected inverter
                 showlegend=(inverter == df['INVERTER'].unique()[0] if selected_inverter == "None" 
                           else inverter == selected_inverter)
@@ -321,7 +329,7 @@ def plot_scatter_ac_vs_irradiation(df, selected_inverter):
         )
     )
     return fig
-
+    
 def plot_irradiation_and_ac_power(df, inverter, test_data):
     # Filter data for the selected inverter
     df_filtered = df[df['INVERTER'] == inverter]
